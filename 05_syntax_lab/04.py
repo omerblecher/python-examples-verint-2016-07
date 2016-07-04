@@ -1,8 +1,17 @@
-"""
-Write a program that reads lines from the user
-until an empty line is inserted.
-After the user typed in an empty line,
-print all previously inserted lines in reverse
-order (from last to first)
-"""
+#Reverse
 
+print "Enter some lines and the results will be print backward: \n"
+
+results = ""
+
+while True:
+    userInput = raw_input()
+    if len(userInput) == 0:
+        break
+    results = userInput + "\n" + results
+
+#print all lines backward
+if len(results) > 0:
+    print results
+else:
+    print "Empty input"
