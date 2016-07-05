@@ -1,16 +1,15 @@
 #Max Number
-import sys
 
 print "Enter 10 numbers: "
 print " "
 
-maxNumber = -sys.maxint
+maxNumber = 0
 
 # loop for the next 10 numbers
 for n in range(1, 11):
-    sys.stdout.write("Number {}: ".format(n))
-    number = int(raw_input())
-    if number > maxNumber : 
+
+    number = int(raw_input("Number {}: ".format(n)))
+    if n == 1 or number > maxNumber : 
         maxNumber = number
 
 #print the results
