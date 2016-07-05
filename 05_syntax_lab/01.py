@@ -3,7 +3,6 @@
 print "Enter 10 numbers: "
 print " "
 
-maxNumber = 0
 
 # loop for the next 10 numbers
 for n in range(1, 11):
