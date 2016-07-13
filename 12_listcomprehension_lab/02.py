@@ -1,7 +1,7 @@
 #All three letters permutation
 
 #Generate a list of all lower letters
-lowerletters = [chr(index) for index in range(ord('a'),ord('z'))]
+lowerletters = [chr(index) for index in range(ord('a'),ord('z') + 1)]
 
 #Generate all three letters permutations
 threeletters = [a + b + c for a in lowerletters for b in lowerletters for c in lowerletters]
