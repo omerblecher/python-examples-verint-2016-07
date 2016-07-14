@@ -1,5 +1,5 @@
-"""
-Write a function that calculates the sum
-of the 10th digit from all arguments passed to it
-"""
+#Calculate sum of all tens digits
+def tendigitssum(*nums):
+    return sum([(n / 10) % 10 for n in nums if type(n) == int])
 
+print tendigitssum(140, 220, 1120)
