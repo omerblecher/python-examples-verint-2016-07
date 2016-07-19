@@ -2,9 +2,9 @@ import re
 
 #To Camel case
 def toCamelCase(text):
-    allWords = re.split(r'_', text)
-    first = allWords[0]
-    return first + ''.join([word.title() for word in allWords[1:]])
+    return re.sub(r'_[a-z]',
+        lambda m: m.group(0)[1].upper()
+        , text)
 
 #From camel case
 def fromCamelCase(text):
