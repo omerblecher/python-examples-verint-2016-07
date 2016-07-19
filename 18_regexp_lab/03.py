@@ -1,15 +1,12 @@
-"""
-Write a python program that takes a CSV file
-reads it line by line and prints each line
-with first and second columns reversed.
+import re
+import sys
+#CSV column replacements
 
-Sample input:
-    Shana,Sargent,shanasargent@isoswitch.com
-    Witt,Hampton,witthampton@zaphire.com
-    Morgan,Grant,morgangrant@lotron.com
 
-Sample output:
-    Sargent,Shana,shanasargent@isoswitch.com
-    Hampton,Witt,witthampton@zaphire.com
-    Grant,Morgan,morgangrant@lotron.com
-"""
+with open(sys.argv[1], "r") as fin:
+    for line in fin:
+        word = line.strip(' \t\n\r')
+        if len(word) > 0 :
+            res = re.search(r'^(.+),(.+),(.+)$', word) #Get all the column values
+            if res is not None:
+                print "%s,%s,%s" % (res.group(2), res.group(1), res.group(3))
