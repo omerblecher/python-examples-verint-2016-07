@@ -1,7 +1,11 @@
-"""
-Write a program that takes a file name
-and prints line count for the file
+#Number of lines in file
+import sys
 
-Alert the user politely if there was any problem opening the file
-"""
+src = sys.argv[1]
 
+try:
+    with open(src, "r") as fin:
+        print sum(1 for line in fin)
+except Exception as e:
+    #Print an error if file not found
+    print "Sorry, file %s not found" % (src)
