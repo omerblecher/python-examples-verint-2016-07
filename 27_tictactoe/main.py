@@ -10,6 +10,7 @@ class inputWindow(object):
     def __init__(self, master, message):
         top=self.top=Toplevel(master)
         self.l=Label(top,text = message)
+        self.value = ""
         self.l.pack()
         self.e=Entry(top)
         self.e.pack()
@@ -52,10 +53,18 @@ class main:
 
         inputX = inputWindow(self._master, "Please enter name for X player:")
         self._master.wait_window(inputX.top)
+
+        if inputX.value == "":
+            return
+
         p1 = player.player(inputX.value, "X")
 
         inputO = inputWindow(self._master, "Please enter name for O player:")
         self._master.wait_window(inputO.top)
+
+        if inputO.value == "":
+            return
+
         p2 = player.player(inputO.value, "O")
         self._gameBoard = board.board()
         self._gameBoard.start(p1, p2)
